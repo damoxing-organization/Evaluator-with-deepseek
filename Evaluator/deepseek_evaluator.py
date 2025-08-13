@@ -1,8 +1,9 @@
 import requests
-
+import os
 class DeepSeekEvaluator:
     def __init__(self):
-        self.api_key = "sk-d9cdec70c4d84f79baee1c8130ffd7da"  # ← 替换成你的真实 API key
+        self.api_key = os.getenv("DEEPSEEK_API_KEY")  # ← 替换成你的真实 API key
+
         self.api_url = "https://api.deepseek.com/v1/chat/completions"
 
     def build_prompt(self, question_type: str, question: str, gold_answer: str, pred_answer: str) -> str:
