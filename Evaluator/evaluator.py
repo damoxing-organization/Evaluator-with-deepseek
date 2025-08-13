@@ -58,7 +58,6 @@ class Evaluator:
         return mapping.get(label, None)
 
     def _strip_newlines(self, text: str) -> str:
-        """去掉字符串里的换行，防止jsonl多行"""
         if text is None:
             return ""
         return str(text).replace("\r\n", " ").replace("\n", " ")
